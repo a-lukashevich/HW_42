@@ -14,8 +14,10 @@ public class Chrome {
 		String driverPath = "";
 		if (System.getProperty("os.name").toUpperCase().contains("MAC"))
 			driverPath = "./resources/webdrivers/mac/chromedriver";
-		else if (System.getProperty("os,name").toUpperCase().contains("WINDOWS"))
+		else if (System.getProperty("os.name").toUpperCase().contains("WINDOWS"))
 			driverPath = "./resources/webdrivers/pc/chromedriver.exe";
+		else if (System.getProperty("os.name").toUpperCase().contains("LINUX"))
+			driverPath = "./resources/webdrivers/linux/chromedriver";
 		else throw new IllegalArgumentException("Unknown OS");
 		
 		System.setProperty("webdriver.chrome.driver", driverPath);
